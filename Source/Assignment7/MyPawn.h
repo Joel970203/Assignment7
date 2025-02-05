@@ -53,5 +53,4 @@ protected:
     UFUNCTION()
     void RollAction(const FInputActionValue& value);
 
-    FVector GravityVelocity = FVector::ZeroVector; // 중력 속도
 };

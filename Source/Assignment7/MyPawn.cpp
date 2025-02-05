@@ -120,12 +120,12 @@ void AMyPawn::YawPitchAction(const FInputActionValue& value)
     FRotator currentRotation = GetActorRotation();
 
     // Yaw (Z축 회전) 처리: 좌우 반대로 회전
-    float newYaw = currentRotation.Yaw - YawPitchVector.X; // 좌우 반대로 회전하도록 음수 적용
+    float newYaw = currentRotation.Yaw - YawPitchVector.X; 
     currentRotation.Yaw = newYaw;
 
     // Pitch (Y축 회전) 처리
     float newPitch = currentRotation.Pitch + YawPitchVector.Y; // 상하 마우스 이동으로 Pitch 값 변경
-    currentRotation.Pitch = FMath::Clamp(newPitch, -80.0f, 80.0f); // Pitch의 범위를 -80 ~ 80도로 제한
+    currentRotation.Pitch = FMath::Clamp(newPitch, -80.0f, 80.0f); // Pitch의 범위 -80 ~ 80도
 
     // 회전 적용
     SetActorRotation(currentRotation);
@@ -139,7 +139,7 @@ void AMyPawn::RollAction(const FInputActionValue& value)
     // X축 회전(Roll) 처리
     float rollInput = value.Get<float>();
 
-    FRotator newRotation(0.0f, 0.0f, rollInput * 10.0f); // 회전 속도 배수 조정 가능
+    FRotator newRotation(0.0f, 0.0f, rollInput * 10.0f);
     AddActorLocalRotation(newRotation);
 }
 

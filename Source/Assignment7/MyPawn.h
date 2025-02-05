@@ -35,9 +35,6 @@ protected:
     UPROPERTY(VisibleAnywhere)
     class UCameraComponent* CameraComponent;
 
-    UPROPERTY(VisibleAnywhere)
-    class UFloatingPawnMovement* MovementComponent; // Ãß°¡
-
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Flight")
     float MoveSpeed = 1000.0f;
 

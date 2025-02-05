@@ -9,7 +9,7 @@
 AMyPawn::AMyPawn()
 {
     PrimaryActorTick.bCanEverTick = true;
-
+    Velocity = FVector::ZeroVector;
     // 루트 충돌 컴포넌트 설정
     CollisionComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CollisionComponent"));
     RootComponent = CollisionComponent;
@@ -109,7 +109,6 @@ void AMyPawn::MoveAction(const FInputActionValue& value)
 
 
 
-
 void AMyPawn::YawPitchAction(const FInputActionValue& value)
 {
     if (!Controller) return;
@@ -148,7 +147,6 @@ void AMyPawn::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 }
-
 
 
 
